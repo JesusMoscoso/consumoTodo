@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Información del Usuario</h2>
+
+  @if(usuario != null) {
+  <div
+    class="card mx-auto shadow-lg"
+    style="max-width: 500px; border-radius: 15px"
+  >
+    <div class="card-body">
+      <h5 class="card-title text-primary mb-3">{{ usuario.name }}</h5>
+      <p class="card-text"><strong>Email:</strong> {{ usuario.email }}</p>
+      <p class="card-text"><strong>Teléfono:</strong> {{ usuario.phone }}</p>
+      <p class="card-text">
+        <strong>Compañía:</strong> {{ usuario.company.name }}
+      </p>
+      <p class="card-text">
+        <strong>Dirección:</strong> {{ usuario.address.street }},
+        {{ usuario.address.suite }}, {{ usuario.address.city }},
+        {{ usuario.address.zipcode }}
+      </p>
+    </div>
+  </div>
+  }@else {
+  <p class="text-center text-muted">Cargando información del usuario...</p>
+  }
+</div>

@@ -1,0 +1,21 @@
+<div class="container mt-3">
+  <h2 class="text-center">Información de la tarea</h2>
+
+  @if(tarea != null) {
+  <div class="d-flex justify-content-center">
+    <div
+      class="card m-2"
+      style="width: 18rem"
+      [ngClass]="tarea.completed ? 'bg-info' : 'bg-info-subtle'"
+    >
+      <div class="card-body">
+        <h5 class="card-title">{{ tarea.title }}</h5>
+        <p class="card-text">Completada: {{ tarea.completed }}</p>
+        <p class="card-text">Usuario: {{ nombreUsuario }}</p>
+      </div>
+    </div>
+  </div>
+  } @else {
+  <p class="text-center">No hay información disponible para esta tarea.</p>
+  }
+</div>

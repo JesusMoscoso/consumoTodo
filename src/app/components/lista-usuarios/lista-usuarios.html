@@ -1,0 +1,20 @@
+<div class="container mt-3">
+  <h2 class="text-center">Lista de Usuarios</h2>
+
+  <div class="row justify-content-center">
+    @for (usuario of usuarios; track $index) {
+    <div class="card m-2 bg-body-tertiary" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Nombre: {{ usuario.name }}</h5>
+        <p class="card-text">Email: {{ usuario.email }}</p>
+        <p class="card-text">Compañia: {{ usuario.company.name }}</p>
+        <button class="btn btn-primary" [routerLink]="['/usuarios', usuario.id]">
+          Ver Detalles
+        </button>
+      </div>
+    </div>
+    }@empty {
+    <p>No hay usuarios disponibles.</p>
+    }
+  </div>
+</div>

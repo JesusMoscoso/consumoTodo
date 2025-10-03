@@ -1,0 +1,23 @@
+<div class="container mt-3">
+  <h2 class="text-center">Lista de tareas</h2>
+
+  <div class="row justify-content-center">
+    @for (tarea of tareas; track $index) {
+    <div
+      class="card m-2"
+      style="width: 18rem"
+      [ngClass]="tarea.completed ? 'bg-info' : 'bg-info-subtle'"
+    >
+      <div class="card-body">
+        <h5 class="card-title">{{ tarea.title }}</h5>
+        <p class="card-text">Completada: {{ tarea.completed }}</p>
+        <button class="btn btn-primary" [routerLink]="['/tareas', tarea.id]">
+          Ver Detalles
+        </button>
+      </div>
+    </div>
+    } @empty {
+    <p>No hay tareas disponibles.</p>
+    }
+  </div>
+</div>
